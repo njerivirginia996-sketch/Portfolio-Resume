@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Virginia Njeri | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            background-color: #0b1020;
+            color: white;
+            line-height: 1.6;
+        }
+
+        h1,
+        h2,
+        h3,
+        nav,
+        button {
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        /* NAVBAR */
+        nav {
+            background-color: #11182b;
+            padding: 20px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav h2 {
+            color: #8b5cf6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            color: #8b5cf6;
+        }
+
+        /* HERO */
+        #home {
+            min-height: 85vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 8% 20px;
+        }
+
+        .hero {
+            max-width: 1000px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .hero h1 {
+            font-size: 55px;
+            margin-bottom: 15px;
+        }
+
+        .hero h1 span {
+            color: #8b5cf6;
+        }
+
+        .hero h3 {
+            color: #c4b5fd;
+            font-size: 25px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            color: #b5bdcf;
+            margin-bottom: 25px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .buttons a {
+            display: inline-block;
+            padding: 12px 25px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: #8b5cf6;
+            color: white;
+        }
+
+        .btn-secondary {
+            border: 1px solid #8b5cf6;
+            color: white;
+        }
+
+        .btn-download {
+            background-color: #1f2937;
+            border: 1px solid #8b5cf6;
+            color: white;
+        }
+
+        .btn-primary:hover,
+        .btn-secondary:hover,
+        .btn-download:hover {
+            background-color: #6d28d9;
+        }
+
+        .hero-card {
+            background-color: #151d33;
+            padding: 35px;
+            border-radius: 15px;
+            border: 1px solid #28334f;
+            text-align: center;
+        }
+
+        .hero-card .circle {
+            width: 160px;
+            height: 160px;
+            margin: auto;
+            border-radius: 50%;
+            overflow: hidden;
+            object-fit: cover;
+            background-color: #8b5cf6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 55px;
+            font-weight: bold;
+        }
+
+        /* GENERAL SECTIONS */
+        section {
+            padding: 20px 8% 60px;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 40px;
+        }
+
+        .section-title span {
+            color: #8b5cf6;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 900px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about p {
+            color: #b5bdcf;
+            margin-bottom: 15px;
+        }
+
+        /* SKILLS */
+        #skills {
+            background-color: #0f1629;
+        }
+
+        .skills-container {
+            max-width: 1000px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .skill {
+            background-color: #151d33;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #28334f;
+        }
+
+        .skill h3 {
+            color: #c4b5fd;
+            margin-bottom: 10px;
+        }
+
+        .skill p {
+            color: #aeb7ca;
+        }
+
+        /* PROJECTS */
+        .projects {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .project {
+            background-color: #151d33;
+            border-radius: 12px;
+            padding: 30px;
+            border: 1px solid #28334f;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .project:hover {
+            transform: translateY(-4px);
+            border-color: #8b5cf6;
+        }
+
+        .project h3 {
+            color: #c4b5fd;
+            margin-bottom: 15px;
+        }
+
+        .project p {
+            color: #aeb7ca;
+            margin-bottom: 20px;
+        }
+
+        .project a {
+            color: #8b5cf6;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .project-note {
+            color: #c4b5fd;
+            font-weight: bold;
+        }
+
+        /* EDUCATION & CAREER GOAL */
+        .timeline {
+            position: relative;
+            max-width: 900px;
+            margin: 0 auto;
+            padding-left: 20px;
+        }
+
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 14px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: linear-gradient(180deg, #8b5cf6, #c4b5fd);
+            border-radius: 10px;
+        }
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 28px;
+            padding-left: 50px;
+        }
+
+        .timeline-item::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 28px;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #8b5cf6;
+            border: 4px solid #0b1020;
+            box-shadow: 0 0 0 4px rgba(139, 92, 246, 0.2);
+        }
+
+        .timeline-card {
+            background-color: #151d33;
+            border: 1px solid #28334f;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 28px 24px;
+        }
+
+        .timeline-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 10px;
+        }
+
+        .timeline-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 10px;
+            background: rgba(139, 92, 246, 0.12);
+            color: #c4b5fd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.3rem;
+        }
+
+        .timeline-card h3 {
+            color: #c4b5fd;
+            font-size: 24px;
+        }
+
+        .timeline-card p,
+        .career-goal-box p,
+        .career-goal-box li {
+            color: #b5bdcf;
+        }
+
+        .career-goal-box {
+            max-width: 900px;
+            margin: auto;
+            background-color: #151d33;
+            border: 1px solid #28334f;
+            border-left: 4px solid #8b5cf6;
+            border-radius: 12px;
+            padding: 30px;
+        }
+
+        .career-goal-box h3 {
+            color: #c4b5fd;
+            margin-bottom: 18px;
+            font-size: 28px;
+        }
+
+        .career-goal-box p {
+            margin-bottom: 16px;
+        }
+
+        .career-goal-box ul {
+            padding-left: 20px;
+        }
+
+        .career-goal-box li {
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+        .contact {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .contact form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact input,
+        .contact textarea {
+            padding: 15px;
+            border: 1px solid #28334f;
+            border-radius: 6px;
+            background-color: #151d33;
+            color: white;
+            font-size: 16px;
+        }
+
+        .contact textarea {
+            height: 150px;
+            resize: vertical;
+        }
+
+        .contact button {
+            padding: 14px;
+            border: none;
+            border-radius: 6px;
+            background-color: #8b5cf6;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        .contact button:hover {
+            background-color: #6d28d9;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: #080c17;
+            text-align: center;
+            padding: 25px;
+            color: #8d96a9;
+        }
+
+        .footer-quote {
+            margin-bottom: 12px;
+            color: #c4b5fd;
+            font-size: 1.1rem;
+            font-style: italic;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 18px;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 8px 16px;
+            border: 1px solid #28334f;
+            border-radius: 6px;
+            color: #c4b5fd;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .social-links a:hover,
+        .social-links a:focus {
+            background-color: #8b5cf6;
+            border-color: #8b5cf6;
+            color: white;
+        }
+
+        .hire-me {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 999;
+            padding: 12px 18px;
+            border-radius: 6px;
+            background-color: #8b5cf6;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+            animation: float-hire-me 3s ease-in-out infinite;
+            transition: 0.3s;
+        }
+
+        @keyframes float-hire-me {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-8px);
+            }
+        }
+
+        .hire-me:hover,
+        .hire-me:focus {
+            background-color: #6d28d9;
+            transform: translateY(-3px);
+        }
+
+        /* RESPONSIVE DESIGN */
+        @media (max-width: 800px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero h1 {
+                font-size: 42px;
+            }
+
+            .skills-container,
+            .projects {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVIGATION -->
+    <nav>
+        <h2>Virginia</h2>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#career">Career Goal</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <!-- HOME -->
+    <section id="home">
+
+        <div class="hero">
+
+            <div>
+                <h1>Hello, I'm <span>Virginia Njeri</span></h1>
+
+                <h3>A Web Engineer and Programmer</h3>
+
+                <p>
+                    I am a passionate web engineer who enjoys creating
+                    clean, responsive and user-friendly websites.
+                     I am always eager to learn new technologies, improve my skills and work on projects that make a positive impact.
+                </p>
+
+                <div class="buttons">
+                    <a href="#contact" class="btn-secondary">Contacts</a>
+                    <a href="resume/index.html" class="btn-download" target="_blank" rel="noopener noreferrer">Resume</a>
+                    <a href="index.html" id="download-portfolio" class="btn-download" download="Virginia-Njeri-Portfolio.html">Download Portfolio</a>
+                </div>
+
+                <div class="social-links" aria-label="Social networks">
+                    <a href="mailto:njerivirginia996@gmail.com">Email</a>
+                    <a href="mailto:njerivirginia996@gmail.com">njerivirginia996@gmail.com</a>
+                    <a href="https://github.com/njerivirginia996-sketch" target="_blank" rel="noopener noreferrer">GitHub</a>
+                    <a href="https://www.linkedin.com/in/virginia-njeri-1724ba429" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                </div>
+            </div>
+
+
+            <div class="hero-card">
+
+                <img class="circle" src="profile.jpg" alt="Virginia Njeri">
+
+                <h2 style="margin-top: 20px;">
+                    Web Engineer and Programmer
+                </h2>
+
+                <p style="color: #aeb7ca;">
+                    HTML • CSS • JavaScript • Python • Git
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT -->
+    <section id="about">
+
+        <div class="section-title">
+            <h2>About <span>Me</span></h2>
+        </div>
+
+        <div class="about">
+
+            <p>
+                I am a web engineer and programmer
+                passionate about technology and programming.
+            </p>
+
+            <p>
+                I enjoy building websites and learning how different
+                technologies work together to create useful digital experiences.
+            </p>
+
+            <p>
+                I'm currently developing my skills in HTML, CSS,
+                JavaScript, Python and Git through practical projects
+                and coding exercises.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- SKILLS -->
+    <section id="skills">
+
+        <div class="section-title">
+            <h2>My <span>Skills</span></h2>
+        </div>
+
+        <div class="skills-container">
+
+            <div class="skill">
+                <h3>HTML</h3>
+                <p>
+                    Creating well-structured and semantic webpages.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>CSS</h3>
+                <p>
+                    Designing responsive and attractive websites.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>JavaScript</h3>
+                <p>
+                    Adding interaction and functionality to websites.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Python</h3>
+                <p>
+                    Programming with functions, loops and conditionals.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Git</h3>
+                <p>
+                    Managing projects and tracking code changes.
+                </p>
+            </div>
+
+            <div class="skill">
+                <h3>Responsive Design</h3>
+                <p>
+                    Building websites that work on different screen sizes.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS -->
+    <section id="projects">
+
+        <div class="section-title">
+            <h2>My <span>Projects</span></h2>
+        </div>
+
+        <div class="projects">
+
+            <div class="project">
+
+                <h3>TiketiPass</h3>
+
+                <p>
+                    A secure event ticketing platform with M-Pesa checkout,
+                    cryptographically signed QR tickets, and offline gate verification.
+                </p>
+
+                <a href="https://tiketipass.onrender.com" target="_blank" rel="noopener noreferrer">View Live Project →</a>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Jomo Kenyatta Tribute Page</h3>
+
+                <p>
+                    A tribute webpage created using HTML and CSS
+                    to present information about Jomo Kenyatta.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>Weather App</h3>
+
+                <p>
+                    A Python project that retrieves and displays
+                    weather information for a selected location.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+
+            <div class="project">
+
+                <h3>JavaScript Exercises</h3>
+
+                <p>
+                    A collection of JavaScript exercises using
+                    arrays, loops, functions and DOM manipulation.
+                </p>
+
+                <a href="#">View Project →</a>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Assignment Tracker</h3>
+
+                <p>
+                    A full-stack app to create an account, organize assignments and
+                    deadlines, track completion, and record project submissions.
+                </p>
+
+                <p class="project-technologies">
+                    React · TypeScript · Express · PostgreSQL
+                </p>
+
+                <p class="project-note">
+                    Interactive demo currently runs locally.
+                </p>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Education Journey</h3>
+
+                <p>
+                    My learning path from primary school, to high school, and now pursuing a diploma in software development.
+                </p>
+
+                <a href="#education">Read More →</a>
+
+            </div>
+
+            <div class="project">
+
+                <h3>Career Goal</h3>
+
+                <p>
+                    My future goal in software development and how I plan to grow into a skilled developer.
+                </p>
+
+                <a href="#career">Read More →</a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- EDUCATION -->
+    <section id="education">
+
+        <div class="section-title">
+            <h2>My <span>Education</span> Journey</h2>
+        </div>
+
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-icon">🎒</div>
+                        <h3>Primary School</h3>
+                    </div>
+                    <p>
+                        I completed my primary education with a strong foundation in literacy, numeracy,
+                        communication, and discipline. It gave me the confidence, curiosity, and love for learning
+                        that continue to shape my academic and professional journey.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-icon">📚</div>
+                        <h3>High School</h3>
+                    </div>
+                    <p>
+                        During high school, I deepened my interest in academics and technology. I developed stronger
+                        critical thinking, teamwork, and problem-solving skills, which strengthened my passion for coding,
+                        innovation, and digital solutions.
+                    </p>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <div class="timeline-icon">💻</div>
+                        <h3>Empower Hope Kenya College</h3>
+                    </div>
+                    <p>
+                        I am currently pursuing a Diploma in Software Development at Empower Hope Kenya College.
+                        This is an important step in my journey as I build practical skills in programming, web development,
+                        and problem-solving to prepare for a successful career in technology.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- CAREER GOAL -->
+    <section id="career">
+
+        <div class="section-title">
+            <h2>My <span>Career</span> Goal</h2>
+        </div>
+
+        <div class="career-goal-box">
+            <h3>Professional Vision</h3>
+
+            <p>
+                My career goal is to become a skilled and innovative software engineer who builds user-friendly,
+                efficient, and impactful digital solutions that solve real-world problems.
+            </p>
+
+            <p>
+                I want to grow in an environment where I can design websites, write clean code, and contribute to projects
+                that improve people's lives and support businesses in a digital world.
+            </p>
+
+            <ul>
+                <li>Develop strong technical skills in web development, programming, and problem-solving.</li>
+                <li>Build practical projects that address real community and business challenges.</li>
+                <li>Work confidently with teams to deliver quality software solutions.</li>
+                <li>Keep learning and growing into a professional developer who makes a meaningful impact.</li>
+            </ul>
+        </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+        <div class="section-title">
+            <h2>Contact <span>Me</span></h2>
+        </div>
+
+        <div class="contact">
+
+
+
+            <form>
+
+                <input
+                    type="text"
+                    placeholder="Your Name"
+                    required
+                >
+
+                <input
+                    type="email"
+                    placeholder="Your Email"
+                    required
+                >
+
+                <textarea
+                    placeholder="Your Message"
+                    required
+                ></textarea>
+
+                <button type="submit">
+                    Send Message
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p class="footer-quote">
+            “Small steps build big dreams.” <span>— Me</span>
+        </p>
+
+        <p>
+            © 2026 Virginia Njeri. All Rights Reserved.
+        </p>
+
+        <p>
+            Built with HTML & CSS.
+        </p>
+
+    </footer>
+
+    <script>
+        const downloadPortfolio = document.querySelector("#download-portfolio");
+
+        downloadPortfolio.addEventListener("click", function (event) {
+            event.preventDefault();
+
+            const portfolioDocument = document.documentElement.cloneNode(true);
+            const resumeLink = portfolioDocument.querySelector('a[href="resume/index.html"]');
+
+            if (resumeLink) {
+                resumeLink.href = new URL("resume/index.html", window.location.href).href;
+            }
+
+            const portfolioHtml = "<!DOCTYPE html>\n" + portfolioDocument.outerHTML;
+            const portfolioFile = new Blob([portfolioHtml], { type: "text/html" });
+            const downloadUrl = URL.createObjectURL(portfolioFile);
+            const downloadLink = document.createElement("a");
+
+            downloadLink.href = downloadUrl;
+            downloadLink.download = "Virginia-Njeri-Portfolio.html";
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+            downloadLink.remove();
+            URL.revokeObjectURL(downloadUrl);
+        });
+    </script>
+
+    <a href="#contact" class="hire-me" aria-label="Hire me and go to the contact section">
+        Hire Me
+    </a>
+
+</body>
+</html>
+```
